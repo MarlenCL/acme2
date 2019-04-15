@@ -1,0 +1,70 @@
+.content {
+  width: 100%;
+}
+
+mat-card {
+  max-width: 350px;
+  text-align: center;
+  animation: fadein 1s;
+  -o-animation: fadein 1s; /* Opera */
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+}
+
+.noVisible{
+  display: none;
+}
+
+#login-img{
+  width: 100%;
+}
+
+mat-input-container {
+  display: block;
+}
+
+mat-spinner {
+  width: 25px;
+  height: 25px;
+  margin: 20px auto 0 auto;
+}
+
+button {
+  display: block;
+  width: 100%;
+}
+
+
+.error {
+  color: #D50000;
+}
+
+.success {
+  color: #8BC34A;
+}
+
+
+@media screen and (max-width: 599px) {
+
+
+
+  mat-card {
+    display: block !important;
+    max-width: 999px;
+  }
+
+}
+#video{
+  width: 100%;
+}
+#canvas{
+  position: absolute;
+  float: left;
+  top: 20px;
+  left: 20px;
+}
+a {
+  text-decoration: none;
+  cursor: auto;
+  color: #FFFFFF;
+}

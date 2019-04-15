@@ -1,0 +1,87 @@
+<!--<p-confirmDialog></p-confirmDialog>
+<p-growl [(value)]="msgs" [sticky]="true"></p-growl>
+<p-table #dt *ngIf="visible" [columns]="cols" [value]="users" (sortFunction)="customSort($event)" [customSort]="true" selectionMode="single"
+  [(selection)]="selectedUser" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="10">
+  <ng-template pTemplate="caption">
+    <div style="text-align: right">
+      <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+      <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')"
+        style="width:auto">
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+        {{col.header}}
+        <p-sortIcon [field]="col.field"></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr [pSelectableRow]="rowData">
+      <td *ngFor="let col of columns">
+        {{rowData[col.field]}}
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary" let-rowData>
+    <div style="text-align:left">
+      <button type="button" pButton icon="fa-plus" (click)="showDialogToAdd()" label="Add"></button>
+    </div>
+  </ng-template>
+</p-table>
+<div id=gif>
+  <img src="assets/image/123.gif" alt="Mountain View" style="width: 24%;"
+    class="content">
+  <p style="margin: auto;width: 24%; text-align: center;">Subiendo imagen... Por favor espere</p>
+</div>
+<p-dialog header="User Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="400"
+  [height]="500">
+  <p-growl [(value)]="msgs" [sticky]="true"></p-growl>
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm" [formGroup]="form">
+    <div class="ui-g ui-fluid" *ngIf="selectedUser">
+      <div class="form-group" *ngIf="!newselectedUser">
+        <label for="id">Id</label>
+        <input type="text" formControlName="id" class="form-control" disabled="disabled" id="id" [(ngModel)]="selectedUser.id" name="Id">
+      </div>
+      <div class="form-group" *ngIf="newselectedUser">
+        <label for="username">Username</label>
+        <input type="file" accept="image/*" formControlName="username" class="form-control" id="username" required name="username"
+          (change)="onFileChange($event)" #fileInput>
+      </div>
+      <div class="form-group">
+        <label>Firstname</label>
+        <input type="text" formControlName="firstname" class="form-control" id="firstname" required [(ngModel)]="selectedUser.firstname"
+          name="firstname">
+      </div>
+      <div class="form-group" *ngIf="newselectedUser">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" id="password" [(ngModel)]="selectedUser.password"
+          name="password">
+        <label for="repeatPassword">Repeat Password</label>
+        <input type="password" formControlName="repeatPassword" class="form-control" id="repeatPassword" [(ngModel)]="repeatPassword"
+          name="repeatPassword">
+      </div>
+      <div *ngIf="!newselectedUser">
+        <label for="password">Role</label>
+        <p-dropdown formControlName="permission" [options]="authorities" [(ngModel)]="selectedAuthority" optionLabel="name" id="permission"
+          [style]="{'width':'150px'}">
+          <ng-template let-item pTemplate="selectedItem">
+            <span style="vertical-align:middle">{{item.label}}</span>
+          </ng-template>
+          <ng-template let-car pTemplate="item">
+            <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+              <div style="font-size:14px;float:right;margin-top:4px">{{car.label}}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+    </div>
+  </form>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="fa-close" (click)="delete(this)" *ngIf="!newselectedUser" label="Delete"></button>
+      <button type="button" pButton icon="fa-check" [disabled]="!userForm.form.valid" (click)="save(this)" label="Save"></button>
+    </div>
+  </p-footer>
+</p-dialog>-->

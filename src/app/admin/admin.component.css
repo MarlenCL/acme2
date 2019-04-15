@@ -1,0 +1,10 @@
+form{
+  height: 350px;
+}
+#gif{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  float: left;
+  top: 33%;
+}

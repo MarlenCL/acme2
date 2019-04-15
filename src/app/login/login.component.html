@@ -1,0 +1,32 @@
+<img id=gif src="assets/image/123.gif" alt="Mountain View" style="margin: auto;width: 24%;display:none; text-align: center;" class="content">
+<p id="gif1" style="margin: auto;width: 24%;display:none; text-align: center;">Analizando imagen... Por favor espere</p>
+<div class="content" fxLayout="row" fxLayoutAlign="center" id=mat-card>
+
+    <mat-card elevation="5" fxFlex>
+    <div class="demo-frame">
+    <div class="demo-container">
+      <video id="video" width="320" height="240" preload autoplay loop muted></video>
+      <canvas id="canvas" width="300" height="240" ></canvas>
+    </div>
+  </div>
+      <mat-card-content>
+
+        <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+
+        <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <mat-input-container>
+            <input matInput formControlName="password" required type="password" placeholder="123">
+          </mat-input-container>
+          <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary">Login</button>
+        </form>
+      </mat-card-content>
+
+    </mat-card>
+
+</div>
+<canvas  class="noVisible" #canvas id="canvas" width="640" height="480"></canvas>
+<ul>
+    <li *ngFor="let c of captures" class="noVisible">
+        <img src="{{ c }}" height="50" />
+    </li>
+</ul>
